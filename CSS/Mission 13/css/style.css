@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/wallpaper.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Définition de la grid */
+main {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    gap: 50px;
+}
+
+div {
+    width: 120px;
+    height: 175px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+div:nth-of-type(odd) {
+    background-color: rgba(0, 200, 0, 0.6);
+}
+
+div:nth-of-type(even) {
+    background-color: rgba(0, 0, 200, 0.6);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+/* On positionne les éléments dans la grid avec grid area */
+div:nth-of-type(1) {
+    grid-area: 1/1/3/2;
+}
+
+div:nth-of-type(2) {
+    grid-area: 1/2/2/3;
+}
+
+div:nth-of-type(3) {
+    grid-area: 1/3/2/4;
+}
+
+div:nth-of-type(4) {
+    grid-area: 1/4/3/5;
+}
+
+div:nth-of-type(5) {
+    grid-area: 2/2/3/3;
+}
+
+div:nth-of-type(6) {
+    grid-area: 2/3/3/4;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>Coucou les nageurs</legend>
+        <form action="">
+            <div>
+                <input type="radio" name="civilite" id="monsieur"><label for="monsieur">Monsieur</label>
+                <input type="radio" name="civilite" id="madame"><label for="madame">Madame</label>
+            </div>
+            <br>
+            <div>
+                <label for="prenom">Entrez votre prénom *</label> <br>
+                <input type="text" placeholder="Votre prénom" required name="prenom" id="prenom">
+            </div>
+            <br>
+            <div>
+                <label for="nom">Entrez votre nom *</label> <br>
+                <input type="text" placeholder="Votre nom" required name="nom" id="nom">
+            </div>
+            <br>
+            <div>
+                <label for="mail">Entrez votre mail *</label> <br>
+                <input type="email" placeholder="Votre mail" required name="mail" id="mail">
+            </div>
+            <br>
+            <div>
+                <label for="password">Entrez votre mot de passe *</label> <br>
+                <input type="password" placeholder="Votre mote de passe" required name="password" id="password">
+            </div>
+            <br>
+            <div>
+                <label for="formations">Vous voulez faire du : * </label> <br>
+                <select required name="formations" id="formations">
+                    <option value="" selected disabled>-- Choisissez votre option --</option>
+                    <option value="dev"> Développement </option>
+                    <option value="des"> Design </option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="jeux">Vous êtes fort sur : * </label> <br>
+                <select required name="jeux" id="jeux">
+                    <option value="" selected disabled>-- Choisissez votre option --</option>
+                    <optgroup label="MOBA">
+                        <option value="lol"> LOL </option>
+                        <option value="dota"> DOTA </option>
+                    </optgroup>
+                    <optgroup label="Aventures">
+                        <option value="lol"> Destiny </option>
+                        <option value="dota"> Halo </option>
+                    </optgroup>
+                    <option value="foot">Fifa</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="autre"> Autres </label> <br>
+                <input type="text" placeholder="Entrez votre jeu" name="autre" id="autre">
+            </div>
+            <br>
+
+            <input type="submit" value="Envoyer">
+
+        </form>
+    </fieldset>
+
+</body>
+
+</html>

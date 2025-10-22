@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.square {
+    width: 250px;
+    height: 150px;
+    border: solid 1px black;
+}
+
+/* on aligne les blocks */
+.inline {
+    display: inline-block;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+/* on masque en grand écran */
+h2,
+h3 {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+
+    /* on masque le premier titre en tablette */
+    h1 {
+        display: none;
+    }
+
+    /* on fait revenir le second titre en tablette */
+    h2 {
+        display: block;
+    }
+
+    /* On préserve le flux */
+    .square {
+        clear: both;
+    }
+
+    /* on fixe le vert à droite */
+    .green {
+        float: right;
+    }
+
+    .inline {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    /* on fait revenir le troisième titre en mobile */
+    h3 {
+        display: block;
+    }
+
+    /* on masque le second titre en mobile */
+
+    h2 {
+        display: none;
+    }
+
+    /* on change la taille des blocks */
+    .square {
+        width: 150px;
+    }
+
+    /* on prend la main sur la position du vert */
+    .green {
+        position: absolute;
+        top: 60px;
+        left: 60px
+    }
+
+    /* on masque le rouge en mobile */
+    .red {
+        display: none;
+    }
+}

@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(../img/wallpaper.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* on applique la flexbox sur le parent */
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 50px;
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.enfant {
+    flex: 1;
+    /* on peut remplacer ceci par une width, cela fixe la taille des enfants de maniere adaptative*/
+    border-radius: 20px;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    margin: 20px 0;
+}
+
+.enfant:nth-of-type(odd) {
+    background-color: rgb(0, 0, 200, 0.7);
+}
+
+.enfant:nth-of-type(even) {
+    color: white;
+    background-color: rgb(0, 128, 0, 0.7);
+}
+
+img {
+    width: 100%;
+}
+
+/* media query tablette */
+@media screen and (max-width:900px) {
+    .enfant {
+        min-width: 45%;
+    }
+
+    p {
+        display: none;
+    }
+}
+
+/* media query téléphone */
+@media screen and (max-width:500px) {
+    .enfant {
+        min-width: 100%;
+    }
+
+    h2 {
+        display: none;
+    }
+}

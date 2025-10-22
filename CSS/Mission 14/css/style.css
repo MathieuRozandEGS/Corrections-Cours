@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.square {
+    width: 600px;
+    height: 400px;
+    margin: 50px auto;
+    background-color: blue;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+@keyframes tourne {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Premier rectangle bleu, infinite le fait tourner à l'infini */
+.square:first-of-type:hover {
+    animation: tourne 1s ease infinite;
+}
+
+/* second rectangle bleu, forwards le fait tourner une fois */
+.square:last-of-type:hover {
+    animation: tourne 1s ease forwards;
+}
+
+.container {
+    height: 80vh;
+    background-image: url(../img/fond.jpg);
+    background-position: bottom;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.panneau {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    display: block;
+    padding: 10px 30px;
+    width: fit-content;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/panneau.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
+/* image de bipbip cachée avec le left négatif */
+.bipbip {
+    width: 200px;
+    position: absolute;
+    bottom: 10px;
+    left: -300px;
+}
+
+/* Création du texte qui s'affichera */
+.bipbip::after {
+    content: "BipBip !";
+    width: 100px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    opacity: 0;
+    position: absolute;
+    top:0;
+    right:-30px;
+}
+
+img {
+    width: 100%;
+}
+
+/* animation qui fait courir Bipbip */
+@keyframes bouge {
+    from {
+        transform: translateX(0);
+    }
+
+    48% {
+        transform: translateX(50vw);
+    }
+
+    60% {
+        transform: translateX(50vw);
+    }
+
+    100% {
+        transform: translateX(200vw);
+    }
+}
+
+/* Animation qui affiche le texte lorsque Bipbip s'arrête */
+@keyframes affiche {
+    from {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+    }
+    62% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+
+}
+
+.panneau:hover+.bipbip {
+    animation: bouge 5s linear forwards;
+}
+
+.panneau:hover+.bipbip::after{
+    animation: affiche 5s linear forwards;
+}

@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width:70%;
+    margin: 50px auto;
+}
+
+
+/* H1 - titre */
+
+@font-face {
+    font-family: "Leviator";
+    src: url(../font/PokemonHollow.ttf);
+}
+
+h1{
+    color: blue;
+    text-align: center;
+    padding:20px;
+    font-size: 4rem;
+    background-color: yellow;
+    font-family: "Leviator";
+}
+
+/* Parent relative */
+.wrapper-relative{
+    position: relative;
+    background-image: url(../img/wave.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
+
+/* IMAGES */
+img{
+    width: 100%;
+    height: auto;
+}
+
+.leviator1{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width: 15%;
+}
+
+.leviator2{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width: 25%;
+    transform: translate(-50%,-50%);
+}
+
+.leviator3{
+    position:absolute;
+    top:-10%;
+    right:-10%;
+    width: 35%;
+}
