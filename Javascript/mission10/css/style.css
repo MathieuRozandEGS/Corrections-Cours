@@ -35,6 +35,10 @@ main::after {
     background-size: cover;
     background-position: center;
     border: solid 10px white;
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
 }
 
 #habitation1 {
@@ -72,6 +76,13 @@ main::after {
     justify-items: center;
     position: relative;
     z-index: 2;
+}
+
+audio{
+    position: absolute;
+    top:5%;
+    left:50%;
+    transform: translateX(-50%);
 }
 
 h1 {
