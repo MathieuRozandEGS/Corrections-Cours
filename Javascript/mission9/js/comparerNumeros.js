@@ -7,7 +7,7 @@ export function comparerNumeros(joues, tirees, numeroChanceJoue, numeroChanceTir
     let resultat = numerosGagnes.length;
     let message = '';
 
-    switch (resultat) {
+    switch (resultat) { // Génère le message en fonction du nombre de numéros gagnants
         case 0: {
             message = 'Vous n\'avez aucun numéro gagnant.';
             break;

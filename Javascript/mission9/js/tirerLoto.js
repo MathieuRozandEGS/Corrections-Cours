@@ -1,7 +1,7 @@
 //Fonction qui tire le loto
 
 export function tirerLoto() {
-    const tirage = new Set();
+    const tirage = new Set(); // Utiliser un Set pour éviter les doublons
     while (tirage.size < 5) {
         const numero = Math.floor(Math.random() * 50); // Génère un nombre aléatoire entre 0 et 49
         tirage.add(numero); // Ajoute le numéro au Set (les doublons sont automatiquement gérés)
@@ -9,5 +9,5 @@ export function tirerLoto() {
     //tire le dernier numéro chance entre 0 et 9
     const numeroChance = Math.floor(Math.random() * 10);
 
-    return [Array.from(tirage), numeroChance];
+    return [Array.from(tirage), numeroChance]; // Retourne un tableau avec les numéros tirés et le numéro chance, Array.from() convertit le Set en tableau
 }

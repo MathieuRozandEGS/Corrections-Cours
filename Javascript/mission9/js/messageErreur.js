@@ -1,11 +1,11 @@
 //Générer les messages d'erreurs
 
 export function afficherMessageErreur(message) {
-    const messageContainer = document.createElement('span');
+    const messageContainer = document.createElement('span'); //Créer un conteneur pour afficher le message d'erreur
     messageContainer.classList.add('message-erreur');
     document.body.appendChild(messageContainer);
     messageContainer.classList.add('toRemove');
-    switch (message) {
+    switch (message) { //Afficher le message d'erreur correspondant
         case 'vide': {
             messageContainer.textContent = 'Tous les champs doivent être remplis.';
             break;

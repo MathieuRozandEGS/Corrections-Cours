@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 20% 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    height: 100vh;
+    gap: 20px;
+    background-image: url('../img/australia.jpeg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 1;
+}
+
+[id^=habitation] {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border: solid 10px white;
+}
+
+#habitation1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background-image: url('../img/savane.jpg');
+}
+
+#habitation2 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    background-image: url('../img/montagne.jpeg');
+}
+
+#habitation3 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background-image: url('../img/savaneNuit.webp');
+}
+
+#habitation4 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    background-image: url('../img/australia.jpeg');
+}
+
+#controls {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 2/3;
+    grid-row: 1/3;
+    gap: 20px;
+    align-self: center;
+    justify-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    position: absolute;
+    top: -80px;
+    left: 0%;
+    z-index: 2;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    text-align: center;
+}
+
+[id^=add] {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+}
+
+[id^=add]:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.8);
+}
+
+[id^=add]:first-of-type {
+    background-image: url('../img/parentLion.gif');
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+[id^=add]:nth-of-type(2) {
+    background-image: url('../img/parentGirafe.gif');
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+[id^=add]:nth-of-type(3) {
+    background-image: url('../img/parentKoala.gif');
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+[id^=add]:nth-of-type(4) {
+    background-image: url('../img/parentOurs.gif');
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#reset {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
