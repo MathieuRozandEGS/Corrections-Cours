@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    height: 100vh;
+    background-color: #f7b7b7;
+    background-image: url('../img/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+    background-position: center bottom;
+    background-attachment: fixed;
+    padding: 50px 0;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #f7b7b7, transparent);
+    z-index: 30;
+}
+
+ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 50px;
+    list-style: none;
+    align-items: center;
+}
+
+li {
+    margin: 0 50px;
+    max-width: 200px;
+}
+
+li:first-of-type {
+    max-width: 100px;
+}
+
+a {
+    font-family: 'Dancing Script', cursive;
+    color: cadetblue;
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: color .5s ease;
+}
+
+a:hover {
+    color: white;
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    color: cadetblue;
+    margin: 10px 0;
+    font-size: 2em;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    line-height: 27px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rounded {
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.rounded::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background-color .5s linear;
+}
+
+.rounded:hover::after {
+    background-color: transparent;
+}
+
+li:first-of-type {
+    margin-right: auto;
+}
+
+main {
+    width: 80%;
+    margin: 20px auto;
+}
+
+section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 80px 0;
+}
+
+article,
+section div {
+    width: 40%;
+}
+
+footer {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to top, #f7b7b7, transparent);
+    ;
+}
+
+footer a {
+    display: block;
+    width: 150px;
+}
