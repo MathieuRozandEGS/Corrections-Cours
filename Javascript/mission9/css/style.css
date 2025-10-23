@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Parkinsans", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-image: url('../img/wallpaper.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:50px
+}
+
+form {
+    background-color: rgba(0, 0, 0, .6);
+    width: 20%;
+    padding: 30px;
+    border-radius: 20px;
+    color: white;
+}
+
+form * {
+    margin-bottom: 20px;
+}
+
+form input[type="number"] {
+    width: 50px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+h1 {
+    align-self: flex-end;
+    padding-bottom: 50px;
+}
+
+.resultat-loto {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    position: absolute;
+    top:50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.resultat-loto li {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background-position: center;
+    background-size: cover;
+    font-weight: bold;
+}
+
+.numero-tire {
+    background-image: url('../img/boule.png');
+}
+
+.numero-chance-tire {
+    background-image: url('../img/joker.png');
+}
+
+.message-resultat, .message-erreur {
+    position: absolute;
+    top: 25%;
+    right: 7%;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.message-erreur {
+    background-color: rgba(255, 0, 0, .6);
+    top: 50%;
+    transform: translateY(-50%);
+    right: 25%;
+}

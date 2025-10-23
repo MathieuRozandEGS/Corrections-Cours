@@ -1,72 +1,60 @@
-//Vérifier que les inputs répondent aux critères de validation d'un loto
+//import en js
+
+import { afficherResultatLoto } from './afficherLoto.js';
+import { validateLotoInputs } from './validerLoto.js';
+import { afficherMessageErreur } from './messageErreur.js';
+import { comparerNumeros } from './comparerNumeros.js';
+import { tirerLoto } from './tirerLoto.js';
+import { resetLoto } from './resetLoto.js';
 
 const inputs = document.querySelectorAll('[id^="chiffre"]');
-
-function validateLotoInputs(inputs) {
-
-    let message = '';
-
-    const valeurs = Array.from(inputs).map(i => i.value.trim());
-
-    const tousValides = 
-        Array.from(inputs).every(input => input.value.trim() //Vérifier que chaque valeur n'est pas vide
-        && !isNaN(input.value)  //Verifier que chaque valeur est un nombre
-        && Number(input.value) >= 0 && Number(input.value) <= 49) //Vérifier que chaque valeur est un nombre entre 0 et 49
-        && new Set(valeurs).size === valeurs.length; //Verifier l'unicité des valeurs, Set créer une collection en supprimanbt les doublons, donc si la taille du Set est égale à la taille du tableau initial, cela signifie qu'il n'y a pas de doublons
-
-    if(Array.from(inputs).every(input => !input.value.trim())){
-        message = 'vide';
-    }
-    else if(!Array.from(inputs).every(input => !isNaN(input.value))){
-        message = 'nombre';
-    }
-    else if(!Array.from(inputs).every(input => Number(input.value) >= 0 && Number(input.value) > 49)){
-        message = 'intervalle';
-    }
-    else if(new Set(valeurs).size !== valeurs.length){
-        message = 'doublon';
-    }
-
-    return [tousValides, message];
-}
-
-//Générer les messages d'erreurs
-
-function afficherMessageErreur(message) {
-    const messageContainer = document.createElement('message-erreur');
-    document.body.appendChild(messageContainer);
-    messageContainer.classList.add('toRemove');
-    switch(message){
-        case 'vide': {
-            messageContainer.textContent = 'Tous les champs doivent être remplis.';
-            break;
-        }   
-        case 'nombre': {
-            messageContainer.textContent = 'Tous les champs doivent être des nombres.';
-            break;
-        }   
-        case 'intervalle': {
-            messageContainer.textContent = 'Les nombres doivent être compris entre 0 et 49.';
-            break;
-        }   
-        case 'doublon': {
-            messageContainer.textContent = 'Les nombres doivent être uniques.';
-            break;
-        }   
-        default: {
-            messageContainer.textContent = '';
-        }
-    }
-}
-
+const jokerInput = document.getElementById('joker');
 //Récupérer le bouton de soumission
 
 const submitButton = document.getElementById('joue');
+
+//Récupérer le bouton de réinitialisation
+
+const resetButton = document.getElementById('rejouer');
 
 //Ajouter un écouteur d'événement au bouton de soumission
 
 submitButton.addEventListener('click', function (event) {
     event.preventDefault(); // Empêcher le comportement par défaut du bouton
-    validateLotoInputs(inputs); // Appeler la fonction de validation
-    afficherMessageErreur(validateLotoInputs(inputs)[1]); // Afficher le message d'erreur si nécessaire
+    document.querySelectorAll('.toRemove').forEach(element => element.remove());//Supprimer les anciens messages d'erreur et résultats
+
+    if (validateLotoInputs(inputs, jokerInput)[0]) { //Si les inputs sont valides
+        //Récupérer les numéros joués
+        const numerosJoues = Array.from(inputs).map(input => Number(input.value.trim())); //Récupérer les valeurs des inputs et les convertir en nombres
+        const numeroChanceJoue = Number(jokerInput.value);//Récupérer le numéro chance joué (le dernier numéro)
+
+        //tirer le loto
+        const [numerosTires, numeroChanceTire] = tirerLoto();
+
+        //afficher les numéros tirés
+        afficherResultatLoto(numerosTires, numeroChanceTire);
+
+        //comparer les numéros joués avec les numéros tirés
+        const messageResultat = comparerNumeros(numerosJoues, numerosTires, numeroChanceJoue, numeroChanceTire);
+
+        //afficher le message de résultat
+        const messageContainer = document.createElement('div');
+        messageContainer.classList.add('message-resultat');
+        document.body.appendChild(messageContainer);
+        messageContainer.classList.add('toRemove');
+        messageContainer.textContent = messageResultat;
+
+        submitButton.disabled = true; //Désactiver le bouton de soumission après un tirage
+        resetButton.disabled = false; //Activer le bouton de réinitialisation
+    }
+    else {
+        afficherMessageErreur(validateLotoInputs(inputs, jokerInput)[1]);
+    }
+});
+
+resetButton.addEventListener('click', function (event) {
+    event.preventDefault(); // Empêcher le comportement par défaut du bouton
+    resetLoto(inputs, jokerInput);
+    submitButton.disabled = false; //Réactiver le bouton de soumission
+    resetButton.disabled = true; //Désactiver le bouton de réinitialisation jusqu'au prochain tirage
 });
