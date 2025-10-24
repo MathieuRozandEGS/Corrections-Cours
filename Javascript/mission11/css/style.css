@@ -1,0 +1,128 @@
+/* ==============================
+   🎨 RESET GÉNÉRAL
+   ============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   🌆 STRUCTURE GLOBALE
+   ============================== */
+main {
+    /* Image de fond */
+    background-image: url("../img/wallpaper.jpeg");
+    background-position: center;
+    background-size: cover;
+
+    /* Hauteur minimum sur toute la page */
+    min-height: 100vh;
+}
+
+/* ==============================
+   🕹️ SECTION DES JEUX
+   ============================== */
+#gamesSection {
+    display: flex;
+    flex-wrap: wrap;              /* Permet de passer à la ligne si besoin */
+    justify-content: center;      /* Centrage horizontal */
+    align-items: center;          /* Centrage vertical */
+    gap: 20px;                    /* Espacement entre les cartes */
+    padding: 20px 20px 100px;     /* Espace intérieur (bas plus grand) */
+}
+
+/* ==============================
+   🧱 CARTES DE JEUX
+   ============================== */
+.container {
+    flex: 1;                      /* S’adapte à l’espace disponible */
+    max-width: 300px;             /* Largeur maximale d’une carte */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(198, 7, 212, 0.45); /* Fond semi-transparent violet */
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* ==============================
+   🌟 NOTES (ÉTOILES)
+   ============================== */
+.flex {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    list-style: none;
+    padding: 10px 0;
+}
+
+/* ==============================
+   🖼️ IMAGES
+   ============================== */
+img {
+    width: 100%;
+    height: auto;                 /* Maintient le ratio d’aspect */
+}
+
+/* ==============================
+   🔠 TITRES ET TEXTES
+   ============================== */
+h1,
+h2 {
+    font-family: "Rock Salt", cursive !important;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    padding: 100px 0;             /* Espace autour du titre principal */
+}
+
+/* ==============================
+   ❌ MESSAGE D’ERREUR
+   ============================== */
+.errorContainer {
+    width: 50%;
+    margin: auto;                 /* Centre horizontalement */
+    background-color: red;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+/* ==============================
+   📰 SECTION NEWS
+   ============================== */
+.newsContainer {
+    display: flex;
+    background-size: cover;        /* Image de fond prend tout l’espace */
+    background-attachment: fixed;  /* Effet de parallaxe */
+    background-position: center;
+}
+
+/* Alterne la direction des blocs (effet zigzag) */
+.newsContainer:nth-of-type(odd) {
+    flex-direction: row-reverse;
+}
+
+/* ==============================
+   📄 ARTICLES DES NEWS
+   ============================== */
+article {
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);  /* Fond semi-transparent noir */
+    color: white;
+    padding: 20px;
+}
+
+article * {
+    margin: 15px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
