@@ -1,0 +1,30 @@
+#carreRouge{
+    width:150px;
+    background-color: red;
+}
+
+#rectVert{
+    width:300px;
+    background-color: green;
+}
+
+#rectBleu{
+    background-color: blue;
+}
+
+#bgImage{
+    background-image: url(../img/exo_05_image.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div{
+    height: 150px;
+    border: solid 1px black;
+}
+
+.gdRect{
+    width:450px;
+}
+

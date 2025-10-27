@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width:100%;
+    height: auto;
+}
+
+@font-face {
+    font-family: "Pokemon";
+    src: url('../font/PokemonHollow.ttf');
+}
+
+.container{
+    width:60%;
+    margin:20px auto;
+}
+
+h1{
+    background-color: yellow;
+    color: blue;
+    text-align: center;
+    font-family: "Pokemon";
+    padding:40px 0;
+    font-size: 3rem;
+}
+
+section{
+    background-image: url('../img/wave.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height:90vh;
+}
+
+.poisson{
+    width:200px;
+    position: absolute;
+}
+
+.poisson:first-of-type{
+    bottom:6%;
+    left:6%;
+}
+
+.poisson:nth-of-type(2){
+    width:320px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.poisson:last-of-type{
+    width:500px;
+    top:-60px;
+    right:-80px;
+}

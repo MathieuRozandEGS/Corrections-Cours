@@ -2,7 +2,6 @@ import { GAMES } from './games.js';
 import { NEWS } from './news.js';
 
 
-
 const gamesPromesse = new Promise((resolve, reject) => { // Création d'une promesse pour récupérer les jeux
     if (typeof GAMES !== 'undefined' && GAMES.length > 0) { // Vérification que les données existent
         resolve(GAMES); // Résolution de la promesse avec les données des jeux

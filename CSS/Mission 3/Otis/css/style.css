@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "Melanie";
+    src: url(../font/BerthaMelanie.ttf);
+}
+
+h1 {
+    text-shadow: palevioletred 0px 7px;
+}
+
+.maj {
+    text-transform: uppercase;
+}
+
+.italique {
+    font-style: italic;
+}
+
+.fontface {
+    font-family: "Melanie";
+    color:red;
+}
+
+.under{
+    text-decoration: underline;
+}
+
+h2{
+    font-family: fantasy;
+    color: rgb(255, 50, 85);
+    text-shadow: black 4px 4px;
+}
+
+h3{
+    color: green;
+    text-transform: capitalize;
+}
+
+.googlefont {
+    font-family: "Roboto", sans-serif;
+    color: blue;
+}
+
+.bold{
+    font-weight: bold;
+    font-size: 1.5rem;
+}

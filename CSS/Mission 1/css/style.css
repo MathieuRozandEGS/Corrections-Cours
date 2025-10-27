@@ -1,0 +1,37 @@
+li{
+    display: inline-block;
+    margin:10px 100px;
+}
+
+a{
+    color: black;
+}
+
+.text1{
+    color:pink;
+    font-family: sans-serif;
+}
+
+#text2{
+    font-size:1.4rem;
+    color: green;
+}
+
+footer{
+    background-color: blue;
+}
+
+.footer{
+    color:white;
+}
+
+span{
+    text-transform: uppercase;
+    color: red;
+    font-size:3rem
+}
+
+#span{
+    color: lightgreen;
+    font-size: 1rem;
+}
