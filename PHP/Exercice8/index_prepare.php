@@ -10,12 +10,18 @@ include 'header.php';
         $pass = "root";
 
         try {
+
+            /* (4) DÉFINITION DE LA REQUÊTE MySQL : à vous de jouer */
+            $sql = 'SELECT first_name , last_name , pseudo , email FROM user';
+
             /* (1) CONNEXION À LA BASE DE DONNÉES : à vous de jouer */
             $dbh = new PDO('mysql:host=localhost;dbname=egs', $user, $pass);
 
-            /* (4) DÉFINITION DE LA REQUÊTE MySQL : à vous de jouer */
+            $sth = $dbh->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+            $sth->execute();
+            
+            $result =$sth->fetchAll();
 
-            $sth = $dbh->query('SELECT first_name , last_name , pseudo , email FROM user');
 
             /* (3) AFFICHAGE DU RÉSULTAT : à vous de jouer */
 
@@ -29,7 +35,7 @@ include 'header.php';
                         </tr>
                     </thead>
                     <tbody>";
-            while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {  //parcours de la réponse de la query faite en BDD
+            foreach ($result as $row) {  //parcours de la réponse de la query faite en BDD
                 echo "<tr>";
                 echo "<td>" . $row['first_name'] . "</td>";
                 echo "<td>" . $row['last_name'] . "</td>";
