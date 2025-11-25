@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+{% block title %}Welcome main page{% endblock %}
+{% block body %}
+    <h1> Welcome main page </h1>
+    <p> Welcome <em>{{ civility ?? 'Truc' }} {{ name ?? 'Anonymous' }}! </em></p>
+{% endblock %}

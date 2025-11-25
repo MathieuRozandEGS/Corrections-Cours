@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Ajout d'un livre {% endblock %}
+
+  {% block body %}
+    <h2> Ajout d'un nouveau livre </h2>
+    <div class="cardAdd">
+        <ul>
+            <li>Titre du livre : {{ book.title }}</li>
+            <li>ISBN : {{ book.isbn }}</li>
+            <li>Resume : {{ book.summary }} </li>
+            <li>Année de publication : {{ book.publicationYear }} </li>
+        </ul>
+    </div>
+
+  {% endblock %}

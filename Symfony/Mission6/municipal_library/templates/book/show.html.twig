@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	Livre
+{% endblock %}
+
+{% block body %}
+	Livre consulté :
+	{{ bookTitle | upper }}
+	{{ loanStatus   }}
+{% endblock %}
