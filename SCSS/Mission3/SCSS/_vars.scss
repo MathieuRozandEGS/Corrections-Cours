@@ -1,0 +1,64 @@
+// ==========================================
+// VARIABLES GLOBALES
+// ==========================================
+
+// --- Reset
+$box-sizing: border-box;
+
+// ==========================================
+// PALETTE DE COULEURS
+// ==========================================
+
+// Couleurs générales
+$color-dark: #333;
+$color-light-gray: #bebebe;
+
+// Couleurs de texte
+$color-text-primary: rgb(236, 188, 250);
+$color-title: #704570;
+$color-white: #ffffff;
+
+// Overlays articles
+$overlay-purple: rgba(119, 58, 143, 0.7);
+$overlay-dark: rgba(71, 68, 72, 0.7);
+
+// ==========================================
+// TYPOGRAPHIE
+// ==========================================
+
+$font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+$font-size-base: 1rem;       // taille par défaut
+$font-size-nav: 1.2rem;
+$font-size-title: 2.5rem;
+$font-size-article-title: 1.8rem;
+$font-size-article-text: 1rem;
+
+// ==========================================
+// ESPACEMENTS
+// ==========================================
+
+$padding-header: 10px 0;
+$padding-footer: 15px 0;
+$padding-article: 20px;
+
+$gap-nav: 25px;
+$gap-articles: 20px;
+
+// ==========================================
+// DIMENSIONS
+// ==========================================
+
+$header-width: 80%;
+$main-height: 85vh;
+$article-height: 400px;
+$article-radius: 10px;
+
+// ==========================================
+// IMAGES
+// ==========================================
+
+$img-jaya: '../img/jaya.jpg';
+$img-garruk: '../img/garruk.webp';
+$img-liliana: '../img/liliana.jpg';
+$img-tamiyo: '../img/Tamiyo.webp';

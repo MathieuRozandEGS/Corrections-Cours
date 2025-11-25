@@ -1,0 +1,170 @@
+@use 'vars' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: $box-sizing;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    background-color: $color-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $padding-header;
+
+    nav {
+        width: $header-width;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: $gap-nav;
+
+            li {
+                list-style: none;
+                width: fit-content;
+
+                a {
+                    text-decoration: none;
+                    color: $color-text-primary;
+                    font-size: $font-size-nav;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                &:first-of-type {
+                    max-width: 20px;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+}
+
+main {
+    background-color: $color-light-gray;
+    height: $main-height;
+
+    h1 {
+        text-align: center;
+        font-size: $font-size-title;
+        color: $color-title;
+        padding: 20px 0;
+        font-family: $font-base;
+    }
+
+    .articleWrapper {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $gap-articles;
+
+        article {
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            border-radius: $article-radius;
+            height: $article-height;
+            display: flex;
+
+            &:hover div {
+                transform: translateY(0);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            &:first-of-type {
+                background-image: url($img-jaya);
+
+                div {
+                    background-color: $overlay-purple;
+                }
+            }
+
+            &:nth-of-type(2) {
+                background-image: url($img-garruk);
+
+                div {
+                    background-color: $overlay-dark;
+                }
+            }
+
+            &:nth-of-type(3) {
+                background-image: url($img-liliana);
+
+                div {
+                    background-color: $overlay-purple;
+                }
+            }
+
+            &:last-of-type {
+                background-image: url($img-tamiyo);
+
+                div {
+                    background-color: $overlay-dark;
+                }
+            }
+
+            h2 {
+                font-size: $font-size-article-title;
+                color: $color-white;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: $font-size-article-text;
+                color: $color-white;
+                line-height: 1.5;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                padding: $padding-article;
+                transform: translateY(100%);
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $color-dark;
+    color: $color-white;
+    text-align: center;
+    padding: $padding-footer;
+    font-size: $font-size-base;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $gap-articles;
+        list-style: none;
+
+        li {
+            a {
+                text-decoration: none;
+                color: $color-text-primary;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            &:first-of-type {
+                padding-right: 20px;
+                border-right: solid 1px $color-white;
+            }
+        }
+    }
+}
