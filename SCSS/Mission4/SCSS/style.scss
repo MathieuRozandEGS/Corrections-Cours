@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin box($color, $width, $bgcolor, $textColor: purple) {
+    border: $width solid $color;
+    padding: 10px;
+    margin: 10px;
+    background-color: $bgcolor;
+    color:$textColor;
+}
+
+%wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+body {
+    background-color: lightgray;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+
+    h1 {
+        text-align: center;
+        padding: 30px;
+    }
+
+    section:first-of-type {
+        .insideWrapper {
+            @extend %wrapper;
+            div {
+                @include box(white, 2px, green, white);
+                text-align: center;
+                font-size: 20px;
+            }
+        }
+
+        .box {
+            @include box(white, 2px, green, white);
+            font-size: 1.3rem;
+        }
+    }
+     section:nth-of-type(2) {
+        .insideWrapper {
+            @extend %wrapper;
+            div {
+                @include box(white, 2px, orange, white);
+                text-align: center;
+                font-size: 20px;
+            }
+        }
+
+        .box {
+            @include box(white, 2px, orange, white);
+            font-size: 1.3rem;
+        }
+    }
+    section:last-of-type {
+        .insideWrapper {
+            @extend %wrapper;
+            div {
+                @include box(white, 2px, red);
+                text-align: center;
+                font-size: 50px;
+            }
+        }
+
+        .box {
+            @include box(white, 2px, red);
+            font-size: 1.6rem;
+        }
+    }
+}
