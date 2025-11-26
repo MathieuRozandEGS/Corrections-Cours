@@ -1,0 +1,14 @@
+@use 'vars' as *;
+
+#fichier1 {
+    h2 {
+        color: $f1-h2-color;
+        font-size: $f1-h2-size;
+    }
+
+    p {
+        color: $f1-p-color;
+        font-size: $f1-p-size;
+        font-weight: $f1-p-weight;
+    }
+}

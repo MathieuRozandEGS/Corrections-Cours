@@ -1,0 +1,21 @@
+@use 'vars' as *;
+
+#fichier2 {
+    background-color: $f2-bg;
+    padding: $f2-padding;
+    margin: $f2-margin;
+
+
+    h2 {
+        color: $f2-h2-color;
+        font-size: $f2-h2-size;
+        font-style: $f2-h2-style;
+    }
+
+
+    p {
+        color: $f2-p-color;
+        font-size: $f2-p-size;
+        font-style: $f2-p-style;
+    }
+}

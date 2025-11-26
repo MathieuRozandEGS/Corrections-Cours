@@ -1,0 +1,24 @@
+@use 'files/_index_01';
+@use 'files/_index_02';
+@use 'files/vars' as *;
+
+* {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $body-bg;
+
+
+    main {
+        width: $main-width;
+        margin: $main-margin;
+
+
+        h1 {
+            font-size: $main-h1-size;
+        }
+    }
+}
