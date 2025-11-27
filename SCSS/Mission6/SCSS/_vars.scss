@@ -1,0 +1,12 @@
+@function grow($size) {
+    @return $size * 2;
+}
+
+@function turn($angle) {
+    @return $angle + 45deg;
+}
+
+$angle1: random(360) + deg;
+$angle2: random(360) + deg;
+
+$color: rgb(random(255), random(255), random(255));

@@ -1,0 +1,52 @@
+@use "vars" as *;
+
+body {
+    background-color: lightgray;
+
+    h1,
+    h2 {
+        color: darken($color, 20%);
+        text-align: center;
+    }
+
+    h2 {
+        color: lighten($color, 20%);
+    }
+
+    .carreWrapper {
+        display: flex;
+        justify-content: space-around;
+
+        .carre {
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+            background-color: $color;
+            border: 2px solid $color;
+
+            &:nth-of-type(2) {
+                transform: rotate($angle1);
+                background-color: darken($color,20%);
+                border: 2px solid lighten($color,20%);
+            }
+
+            &:last-of-type {
+                transform: rotate($angle2);
+                background-color: darken($color,40%);
+                border: 2px solid lighten($color,30%);
+            }
+        }
+    }
+
+    p {
+        font-size: 12px;
+
+        &:nth-of-type(2) {
+            font-size: grow(12)+px;
+        }
+
+        &:last-of-type {
+            font-size: grow(grow(12))+px;
+        }
+    }
+}
